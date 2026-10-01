@@ -1,0 +1,221 @@
+/* Make the heading section fill half of the desktop screen. */
+header {
+	min-height: 40vh;
+	box-sizing: border-box;
+	background-image: linear-gradient(60deg, #0068b5, rgb(0, 34, 128));
+  color: white;
+  border-radius: 0 0 15px 15px;
+
+	/* Center the logo, title, and subheading inside the section. */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(229, 244, 245);
+	overflow-x: hidden;
+}
+
+header > div {
+	max-width: 800px;
+}
+
+header img {
+	width: 140px;
+  margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+h1 {
+	margin-bottom: 16px;
+	font-size: 48px;
+  font-family: Nunito, sans-serif;
+  text-transform: uppercase;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* Create a separate line under the heading. */
+.my-line {
+	width: 250px;
+	height: 5px;
+	margin: 0 auto 16px;
+	background-color: rgb(229, 244, 245);
+	border-radius: 5px;
+}
+
+header p {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.5;
+  font-family: Nunito, sans-serif;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 10px;
+}
+
+/* Keep the timeline cards in one horizontally scrollable row. */
+section {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	gap: 24px;
+	margin: 0 100px;
+	padding: 24px 0;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+section::-webkit-scrollbar {
+	display: none;
+}
+
+.card {
+	box-sizing: border-box;
+	flex: 0 0 240px;
+	max-width: 240px;
+	scroll-snap-align: start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 24px;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+  color: rgb(0, 34, 128);
+	position: relative;
+	overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+	transform: scale(1.04);
+}
+
+.card h2 {
+	margin: 0 0 4px;
+}
+
+.card h3 {
+	margin: 0;
+  margin-bottom: 10px;
+}
+
+.card p {
+	box-sizing: border-box;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 24px;
+  color: white;
+  background-color: rgba(0, 10, 60, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover p {
+  opacity: 1;
+}
+
+.card img {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 232px;
+	height: 150px;
+	object-fit: cover;
+	margin-bottom: 16px;
+	border-radius: 12px;
+}
+
+.card .my-new-line{
+  width: 170px;
+	height: 5px;
+	margin: 0 auto 16px;
+	background-color: rgb(0, 34, 128);
+	border-radius: 5px;
+}
+
+.scrollLabel{
+color: rgb(0, 34, 128);
+text-align: center;
+font-weight: bold;
+}
+
+/* Use a smaller heading on narrow screens. */
+@media (max-width: 600px) {
+	header {
+		height: 33vh;
+		min-height: 0;
+		padding: 12px 24px;
+	}
+
+	header img {
+		width: 80px;
+		margin-bottom: 8px;
+	}
+
+	section {
+		box-sizing: border-box;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 16px;
+		margin: 16px 24px 0;
+		padding: 16px 0 96px;
+		height: calc(67vh - 16px);
+		overflow-x: hidden;
+		overflow-y: auto;
+		scroll-snap-type: y mandatory;
+	}
+
+	h1 {
+		font-size: 26px;
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 0;
+		margin-bottom: 8px;
+	}
+
+	header p {
+		font-size: 14px;
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 0;
+	}
+
+	.scrollLabel {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 8px 12px;
+		background-color: rgb(229, 244, 245);
+		font-size: 12px;
+	}
+
+	.card {
+		flex: 0 0 auto;
+		width: 100%;
+		max-width: none;
+		padding: 16px;
+		scroll-snap-align: start;
+	}
+
+	.card img {
+		height: 100px;
+		margin-bottom: 10px;
+	}
+}
+
