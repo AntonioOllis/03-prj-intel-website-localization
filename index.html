@@ -35,7 +35,7 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline-section">
 
     <!-- Card 1: 1968 -->
     <div class="card">
@@ -167,12 +167,12 @@
   <p class="scrollLabel">Scroll to view timeline | Hover over cards to learn more!</p>
 
    <!-- 3-Column Content Section -->
-  <section>
+  <section class="content-section">
     <div class="container-fluid">
-      <div class="row" spacing="5">
+      <div class="row g-4">
       
       <!-- Column 1 -->
-      <div class="col fs-4">
+      <div class="col-12 col-md-6 col-lg-4 fs-4 py-3">
         <h2>
           <i class="bi bi-file-bar-graph me-2" aria-hidden="true"></i>
           RISE Strategy</h2>
@@ -186,7 +186,7 @@
       </div>
 
       <!-- Column 2 -->
-      <div class="col fs-4">
+      <div class="col-12 col-md-6 col-lg-4 fs-4 py-3">
         <h2>
           <i class="bi bi-globe me-2" aria-hidden="true"></i>
           Commitment</h2>
@@ -201,7 +201,7 @@
       </div>
 
       <!-- Column 3 -->
-      <div class="col fs-4">
+      <div class="col-12 col-md-6 col-lg-4 fs-4 py-3">
         <h2>
           <i class="bi bi-droplet me-2" aria-hidden="true"></i>
           Water &amp; Waste</h2>
@@ -224,7 +224,7 @@
     <h2 class="text-center w-100">
       <i class="bi bi-envelope me-2" aria-hidden="true"></i>
       Subscribe to our Newsletter</h2>
-    <form>
+    <form id="newsletter-form">
       <div class="row g-2 align-items-end">
         <div class="col-12 col-md">
           <input type="email" class="form-control fs-5" id="newsletter-email" placeholder="Enter your email" required>
@@ -235,6 +235,24 @@
       </div>
     </form>
   </section>
+
+  <div class="modal fade" id="subscribeModal" tabindex="-1"
+      aria-labelledby="subscribeModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="subscribeModalLabel">
+          Thanks for subscribing!
+        </h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Your email has been received.
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- Footer -->

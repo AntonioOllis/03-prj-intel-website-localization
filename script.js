@@ -23,3 +23,12 @@ languageObserver.observe(page, {
   attributes: true,
   attributeFilter: ["lang"]
 });
+
+const newsletterForm = document.querySelector("#newsletter-form");
+
+newsletterForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const modalElement = document.querySelector("#subscribeModal");
+  bootstrap.Modal.getOrCreateInstance(modalElement).show();
+});
